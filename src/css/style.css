@@ -1,0 +1,110 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    height: 100vh;
+    padding: 30px;
+    background-color: rgba(204, 204, 204, 0.74);
+    text-align: center;
+}
+
+.main_form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: white;
+}
+
+.main_form-text {
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    resize: none;
+    overflow: hidden;
+}
+
+.main_form-manage {
+    display: flex;
+    justify-content: space-between;
+}
+
+label {
+    display: inline-block;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+label:after {
+    display: none;
+    position: absolute;
+    top: -2px;
+    left: 5px;
+    content: "";
+    width: 5px;
+    height: 12px;
+    border: 3px solid black;
+    border-left: none;
+    border-top: none;
+    transform: rotate(45deg);
+}
+
+.show:after {
+    display: block;
+}
+
+label:first-child {
+    margin-left: 0;
+}
+
+.color-orange {
+    background-color: orange;
+}
+
+.color-blue {
+    background-color: blue;
+}
+
+.color-green {
+    background-color: green;
+}
+
+.color-red {
+    background-color: red;
+}
+
+.color-yellow {
+    background-color: yellow;
+}
+
+.color-gold {
+    background-color: gold;
+}
+
+label input {
+    display: none;
+}
+
+.list-items {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    list-style: none;
+    padding: 0;
+    margin: 30px auto 0;
+}
+
+.list-item {
+    width: calc(100% / 5);
+    margin: 10px 10px 0px 0px;
+    text-align: left;
+}
+.list-item div{
+    min-height: 70px;
+    padding: 5px;
+    box-sizing: border-box;
+}
