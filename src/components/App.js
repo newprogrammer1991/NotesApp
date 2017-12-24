@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import NoteForm from './NoteForm'
-import Note from './Note'
 import NoteList from './NoteList'
+import NoteForm from './NoteForm'
 import '../css/style.css'
 
 class App extends Component {
@@ -13,9 +12,24 @@ class App extends Component {
         this.addNote = this.addNote.bind(this);
     }
 
+    componentDidUpdate() {
+        let serialize = JSON.stringify(this.state.notes);
+        localStorage.setItem('notes', serialize);
+    }
+
+    componentDidMount() {
+        let result = localStorage.getItem('notes');
+        if (result && !this.state.notes.length) {
+            this.setState({
+                notes: JSON.parse(result)
+            })
+        }
+
+    }
+
     addNote(properties) {
         this.setState({
-            notes:this.state.notes.concat(properties)
+            notes: this.state.notes.concat(properties)
         })
     }
 
@@ -23,7 +37,7 @@ class App extends Component {
         return (
             <div className="main">
                 <h2>NotesApp</h2>
-                <NoteForm addNote={this.addNote} />
+                <NoteForm addNote={this.addNote}/>
                 <NoteList notes={this.state.notes}/>
             </div>
         )

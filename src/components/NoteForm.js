@@ -11,6 +11,8 @@ class NoteForm extends Component {
         this.handleChangeText = this.handleChangeText.bind(this);
     }
 
+
+
     handleChange(event) {
         let value = event.target.value;
         this.setState({
@@ -26,7 +28,9 @@ class NoteForm extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        if (this.state.text) this.props.addNote(this.state);
+        if (this.state.text) {
+            this.props.addNote(this.state);
+        }
         this.setState({
             color: 'white',
             text: ''
